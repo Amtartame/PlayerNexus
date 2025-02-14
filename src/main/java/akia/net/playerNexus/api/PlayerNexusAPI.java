@@ -5,7 +5,6 @@ import akia.net.playerNexus.PlayerDataManager;
 import org.bukkit.entity.Player;
 
 import java.util.Map;
-import java.util.UUID;
 
 public class PlayerNexusAPI {
 
@@ -61,16 +60,6 @@ public class PlayerNexusAPI {
      */
     public void setValue(Player player, String key, String value) {
         dataManager.setValue(player.getUniqueId(), key, value);
-    }
-
-    /**
-     * Sauvegarde toutes les données d'un joueur.
-     *
-     * @param player Le joueur concerné.
-     * @param data   Les données à sauvegarder.
-     */
-    public void saveAllData(Player player, Map<String, String> data) {
-        dataManager.savePlayerData(player.getUniqueId(), data);
     }
 
     /**
