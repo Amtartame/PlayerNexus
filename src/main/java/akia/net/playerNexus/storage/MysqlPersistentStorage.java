@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.*;
 
 public class MysqlPersistentStorage implements PersistentStorage {
-    private Connection connection;
+    private final Connection connection;
     private final List<String> modelKeys;
     private final String tableName = "player_data";
 
