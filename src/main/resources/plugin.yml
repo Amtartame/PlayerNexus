@@ -1,0 +1,7 @@
+name: PlayerDataPlugin
+main: akia.net.playerNexus.PlayerNexus
+version: 1.0
+api-version: 1.21
+commands:
+  pdata:
+    description: Affiche ou met à jour vos données.

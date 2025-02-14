@@ -1,0 +1,20 @@
+storage:
+  persistent: yml         # Options : yml, mysql
+  persistent_yaml:
+    path: plugins/PlayerNexus/data.yml
+  persistent_mysql:
+    host: localhost
+    port: 3306
+    database: playerdata
+    username: user
+    password: pass
+
+  cache: local            # Options : local, redis
+  cache_redis:
+    host: localhost
+    port: 6379
+
+model:
+  player:
+    - money
+    - experience
