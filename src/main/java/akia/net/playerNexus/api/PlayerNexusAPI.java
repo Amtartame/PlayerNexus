@@ -10,10 +10,10 @@ import java.util.UUID;
 public class PlayerNexusAPI {
 
     private static PlayerNexusAPI instance;
-    private final PlayerDataManager dataManager; // Utilisation de PlayerDataManager
+    private final PlayerDataManager dataManager;
 
     public PlayerNexusAPI(PlayerNexus plugin) {
-        this.dataManager = plugin.getDataManager(); // Récupération du gestionnaire de données
+        this.dataManager = plugin.getDataManager();
         instance = this;
     }
 
