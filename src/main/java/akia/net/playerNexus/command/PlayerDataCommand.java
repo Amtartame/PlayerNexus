@@ -1,5 +1,6 @@
-package akia.net.playerNexus;
+package akia.net.playerNexus.command;
 
+import akia.net.playerNexus.PlayerDataManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

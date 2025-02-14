@@ -1,8 +1,10 @@
 package akia.net.playerNexus;
 
+import akia.net.playerNexus.api.PlayerNexusAPI;
 import akia.net.playerNexus.cache.CacheStorage;
 import akia.net.playerNexus.cache.LocalCacheStorage;
 import akia.net.playerNexus.cache.RedisCacheStorage;
+import akia.net.playerNexus.command.PlayerDataCommand;
 import akia.net.playerNexus.storage.MysqlPersistentStorage;
 import akia.net.playerNexus.storage.PersistentStorage;
 import akia.net.playerNexus.storage.YamlPersistentStorage;
@@ -21,6 +23,8 @@ public class PlayerNexus extends JavaPlugin implements Listener {
     private PlayerDataManager dataManager;
     private List<String> modelKeys;
     private Logger logger;
+    private PlayerNexusAPI api;
+
 
     @Override
     public void onEnable() {
@@ -91,6 +95,8 @@ public class PlayerNexus extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
         Objects.requireNonNull(getCommand("pdata")).setExecutor(new PlayerDataCommand(dataManager));
 
+        this.api = new PlayerNexusAPI(this);
+
         logger.info("PlayerNexus plugin activé!");
     }
 
@@ -119,5 +125,13 @@ public class PlayerNexus extends JavaPlugin implements Listener {
             // Charger le cache à partir du stockage permanent si nécessaire
             dataManager.loadPlayerData(uuid);
         }
+    }
+
+    public PlayerDataManager getDataManager() {
+        return dataManager;
+    }
+
+    public PlayerNexusAPI getAPI() {
+        return api;
     }
 }
